@@ -1,0 +1,197 @@
+{
+    "aws": {
+        "region_name": "eu-west-1",
+        "table_name": "botox_3_table",
+        "bucket_name": "botoxbucket",
+        "license_image_file_name": "License.jpeg"
+    },
+    "telegram": {
+        "token": "6467965504:AAHoFv-gir5CNKY8ZJvD-oaj0yYwseuTMmg",
+        "api_url": "https://api.telegram.org/bot",
+        "sendMessage_url": "/sendMessage",
+        "edit_url": "/editMessageText",
+        "delete_url": "/deleteMessage",
+        "sendPhoto_url": "/sendPhoto"
+    },
+    "openai": {
+        "api_key": ""
+    },
+    "settings": {
+        "months_to_keep_gpt_data": 6,
+        "days_to_keep_users_data": 3,
+        "days_to_keep_users_data_admin": 30,
+        "max_user_message_length": 200,
+        "gpt_use_limit_per_user": 50,
+        "gpt_global_monthly_limit": 400
+    },
+    "admin": {
+        "user_id": "telegram 216538677",
+        "name": "Omri"
+    },
+    "locations_data": {
+        "Hebrew": {
+            "Arsuf": "בכדי להגיע לעמדת הרחיפה בארסוף עקוב אחרי ההנחיות הבאות:\n\nנוסעים עם הווייז עד החניה-\nhttps://waze.com/ul/hsvbbewf7w\n\nוכשמגיעים לחניה הולכים ברגל 5 דקות לפי הסרטון-\nhttps://www.youtube.com/shorts/mzC88lKRv60\n\nעד שמגיעים לעמדת הרחיפה. שימו לב, בעמדת הרחיפה יש מספר חברות שונות שמפעילות, נא להגיע ל'כנפיים מצנחי רחיפה'.",
+            "Netanya": "עמדת הרחיפה בנתניה ממוקמת ברחוב עובד בן עמי 35, מול מלון רמאדה. שימו לב, בעמדת הרחיפה יש מספר חברות שונות שמפעילות, נא להגיע ל'כנפיים מצנחי רחיפה'."
+        },
+        "English": {
+            "Arsuf": "In order to arrive at Arsuf Paragliding site, follow the instructions:\n\nNavigate to the parking lot-\nhttps://waze.com/ul/hsvbbewf7w\n\nFrom the parking lot, walk for 5 minutes according to this video-\nhttps://www.youtube.com/shorts/mzC88lKRv60\n\nPlease note that there are a few paragliding companies on site so please make sure you contact Omri from Paragliding IL (‘Knafayim’ in Hebrew).",            
+            "Netanya": "The Paragliding site in Netanya is located at Oved ben ami 35 st. across the road from the Ramada hotel. Please note that there are a few paragliding companies on site so please make sure you contact Omri from Paragliding IL (‘Knafayim’ in Hebrew)."
+        }
+    },
+    "response_dict_main": {
+        "Hebrew": {
+            "General information": {
+                "response": "אנחנו מרחפים בארסוף שליד הרצליה ובנתניה בשעות הצהריים ואחר הצהריים. הרחיפות מתבצעות על ידי מדריך בעל רישיון מטעם רשות התעופה האזרחית, ניסיון וציוד חדיש.",
+                "title": "פרטים כלליים"
+            },
+            "Booking": {
+                "response": "בכדי לקבוע מועד רחיפה, השאר מספר טלפון ונציג אנושי יצור איתך קשר בהקדם האפשרי.",
+                "title": "קביעת מועד רחיפה"
+            },
+            "Activity times": {
+                "response": "הרחיפה מתבצעת באמצעות רוח מתאימה ולכן אין לנו שעות קבועות ואי אפשר לדעת בדיוק מתי הרוח כבר לא תהיה מספיק טובה לרחיפה. ההגעה לרחיפה היא בתיאום מראש בלבד, אולם ניתן לתאם גם באופן קצר מועד. בחודשי הקיץ לרוב הרוח המתאימה לרחיפה תהיה בין שעה 12:00 לשעה 17:00.",
+                "title": "שעות פעילות"
+            },
+            "Location": {
+                "response": "LOL",
+                "title": "דרכי הגעה"
+            },
+            "Pricing": {
+                "response": "הרחיפה עולה 250 שקלים ל- 10 דקות באוויר או 350 שקלים ל- 20 דקות באוויר לאדם. ניתן להוסיף סרטון של הרחיפה בתוספת של 100 שקלים לאדם. בחודש אוגוסט ('בין הזמנים') ובחול המועד הרחיפה עולה 300 שקלים ל- 10 דקות באוויר או 400 שקלים ל- 20 דקות באוויר.",
+                "title": "מחירים"
+            },
+            "Payment methods": {
+                "response": "ניתן לשלם באשראי, פייבוקס או מזומן במקום לאחר הרחיפה. במעמד ההזמנה יש לשלם מקדמה על סך 150 שקלים לרחיפה. במידה ותבטלו את הרחיפה בהתראה קצרה מ 48 שעות לפני מועד הרחיפה לא תוכלו לקבל החזר על המקדמה. תשלום באמצעות כרטיס אשראי זר יחויב בעמלה של 3%.", 
+                "title": "אמצעי תשלום"
+            },
+            "Voucher & Gift card": {
+                "response": "ניתן לרכוש שובר מתנה לרחיפה. לאחר התשלום עבור השובר תקבלו את השובר המעוצב ישירות אל הוואצאפ או המייל שלכם. לשובר אין מגבלת תוקף. ",
+                "title": "שובר מתנה"
+            },
+            "Motorized": {
+                "response": "הרחיפה בטרקטורון מעופף יוצאת ממנחת רונית ליד קיבוץ יקום ומתקיימת בשעות הבוקר המוקדמות (מאור ראשון עד סביבות שעה 10) ובימי חול גם בשעות הערב עד אור אחרון. הרחיפה היא בליווי מדריך מוסמך והיא עולה 450 ל 20 דקות באוויר לאדם עם אפשרות להוסיף צילום של הרחיפה בתוספת של 100 שקלים לאדם.",
+                "title": "מצנח ממונע \\ טרקטורון מעופף"
+            },
+            "Contact back & Human representative": {
+                "response": "השאר מספר טלפון ונציג אנושי יצור איתך קשר בהקדם האפשרי.",
+                "title": "מעבר לנציג אנושי"
+            }
+        },
+        "English": {
+            "General information": {
+                "response": "We fly in Arsuf which is near Herzliya and at Netanya, at noon and afternoon hours. We take off from the cliff along the beach, each person flies with a qualified instructor and modern equipment.",
+                "title": "General information"
+            },
+            "Booking": {
+                "response": "In order to book a flight, leave your number and our staff will contact you as soon as possible.",
+                "title": "Booking a flight"
+            },
+            "Activity times": {
+                "response": "We don't have a fixed schedule, as we need certain wind conditions in order to fly. Usually The best time to fly  is usually at summer time, between 12:00 and 17:00. For that reason, we can accept you if you book in advance.",
+                "title": "Activity times"
+            },
+            "Location": {
+                "response": "LOL",
+                "title": "Location"
+            },
+            "Pricing": {
+                "response": "10 minutes of flying costs 250 shekels per person. 20 minutes of flying costs 350 shekels per person. during Israeli holidays and during the entire August we charge extra 50 shekels per person. A video of the flight is available for additional 100 shekels per person. We accept foreign credit cards for an additional 3% (we can’t accept AMEX cards).",
+                "title": "Pricing"
+            },
+            "Payment methods": {
+                "response": "We accept credit cards (except for AMEX), Paybox app or cash. Upon booking, you will have to pay an advance payment of 150 shekels per person. The rest of the payment is done after flying. In case you cancel less than 48 hours before the booking date you will be charged the amount of the advance payment. Foreign credit cards are charged 3% extra for the exchange rate.",
+                "title": "Payment methods"
+            },
+            "Voucher & Gift card": {
+                "response": "You can buy a voucher / gift card. After the payment you will receive the voucher with the receiver’s name on it. The voucher has no expiration date. ",
+                "title": "Voucher & Gift card"
+            },
+            "Motorized": {
+                "response": "A Motorized Paragliding flight costs 450 shekels per person for 20 minutes flying. You can get a video of the flight for an additional 100 shekels. From Sunday until Thursday available between sunrise and 10:00 and from 17:00 until sunset. Friday and Saturday are available in the morning only. ",
+                "title": "Flying ATV / Motorized Paragliding"
+            },
+            "Contact back & Human representative": {
+                "response": "Leave your number and our staff will contact you as soon as possible.",
+                "title": "Human representative"
+            }
+        }
+    },
+    "response_dict_extra": {
+        "Hebrew": {
+            "Female instructor": {
+                "response": "לצערנו הרב אין בארץ אף מדריכה מוסמכת לעבוד. אולם, אנחנו עובדים המון עם קהל דתי וחרדי, הרחיפה מתבצעת ללא נגיעה, הנוסעת יושבת ברמתה נפרדת מהמדריך.",
+                "title": "מדריכה"
+            },
+            "Photographing": {
+                "response": "ניתן להוסיף סרטון של הרחיפה בתוספת של 100 שקלים לאדם. אנחנו עולים לאוויר עם מצלמת גו פרו ומקל סלפי נפתח. מצלמים 5-8 דקות מהרחיפה ומאפשרים לכם לבחור בין לקבל את הסרטון המלא ללא כל עריכה או לקבל סרטון ערוך באורך של כ- 90 שניות עם מוזיקת רקע ושם הנוסע. הסרטונים יועברו אליכם באמצעות קישור הורדה מהענן.",
+                "title": "צילום"
+            },
+            "Couple flight": {
+                "response": "במצנח רחיפה זוגי יש שני מקומות כאשר מאחור יושב מדריך ומקדימה הנוסע. נוכל לעשות רחיפה זוגית בשני מצנחים ושני מדריכים במקביל (בתיאום מראש) אבל לא ניתן לעלות זוג ביחד לאותו מצנח.",
+                "title": "האם ניתן לרחף בזוג?\u200F"
+            },
+            "Group": {
+                "response": "ניתן לקבוע רחיפה לקבוצת אנשים. השאר מספר טלפון ונציג אנושי יצור איתך קשר בהקדם האפשרי.",                
+                "title": "רחיפה לקבוצה"
+            },
+            "License": {
+                "response": "יש לנו רשיון רשמי על פי חוק של רשות התעופה האזרחית. יש לציין כי לחלק ניכר מהמפעילים בתחום שלנו אין רישיון וכי הנושא אינו נאכף על ידי רשויות החוק.\n\nמצורף צילום של הרשיון שלי:",
+                "title": "רשיון"
+            },
+            "Insurance": {
+                "response": "לצערנו הרב בישראל לא ניתן לבטח את פעילות הרחיפה ולכן אין לנו פוליסת ביטוח. אולם, יש לנו רישיון מסחרי הנדרש כחוק מטעם רשות התעופה האזרחית והמון שנות ניסיון עם עבר נקי מתאונות.",
+                "title": "ביטוח"
+            },
+            "Age": {
+                "response": "הרחיפה מתבצעת מגיל 5 עד גיל 85 בכפוף למצב בריאותי תקין. אם יש ספק, מומלץ להתייעץ עם גורם רפואי מוסמך. הרחיפה אינה דורשת מאמץ כלשהו או יכולות פיזיות מיוחדות.",
+                "title": "מגבלת גיל"
+            },
+            "Weight": {
+                "response": "זה משתנה בהתאם לרוח. רוח חזקה יותר תאפשר לקחת נוסע כבד יותר. לרוב נוכל לרחף עם נוסעים מתחת ל- 100 קילו. נוסעים במשקל של מעל או בסביבות 100 קילו מתבקשים לציין זאת בשיחה.",
+                "title": "מגבלת משקל"
+            },
+            "Danger & Risk": {
+                "response": "רחיפה במצנח רחיפה היא ספורט אתגרי וכמו בכל ספורט אתגרי יש בה סיכונים. אולם ניתן לצמצם את הסיכון משמעותית אם מבצעים את הרחיפה בתנאי רחיפה מתאימים עם ציוד תקין וחדיש ועם מדריך מוסמך ומנוסה אשר אמון על הבטיחות. לאחר אלפים רבים של רחיפות נוכל לומר באחריות שהסיכון ברחיפה עם 'כנפיים מצנחי רחיפה' הוא מינורי בהחלט ואף נמוך מהסיכון הכרוך בנסיעה בכביש בישראל.",
+                "title": "האם הרחיפה מסוכנת?\u200F"
+            }
+        },
+        "English": {
+            "Female instructor": {
+                "response": "Unfortunately there isn’t a single female Paragliding instructor available in Israel. but, we do work a lot with Haredi people and we respect the “Negia” issue. The passenger is seated in a different harness and a full separation is maintained.",
+                "title": "Female instructor"
+            },
+            "Photographing": {
+                "response": "A video of the flight is available for additional 100 shekels per person. We use a GoPro camera with a selfie stick. We shoot about 5-7 minutes of the flight and offer you to get either a 90 seconds edited video with music or the full length video unedited. We upload the video to the cloud and send you a download link via WhatsApp or Email. you could download it to your device within a 14 days period.",
+                "title": "Photographing"
+            },
+            "Couple flight": {
+                "response": "A maximum of 2 people can fly on a paraglider but one of them must be an instructor. If you wish to book a flight for 2 people simultaneously, it's possible, just let us know in advance.",
+                "title": "Is there a couple flight?"
+            },
+            "Group": {
+                "response": "Scheduling flights for a group is available. Leave your number and our staff will contact you as soon as possible.",                
+                "title": "Group flight"
+            },
+            "License": {
+                "response": "We have a license by the legal requirement given by the Israeli Civil Aviation Authority.\n\nI attach my license photo:",
+                "title": "License"
+            },
+            "Insurance": {
+                "response": "Unfortunately insurance isn’t available in Israel. We do have a valid license from the Israeli civil aviation authority and a clean record of accidents. ",
+                "title": "Insurance"
+            },
+            "Age": {
+                "response": "The minimum age is 5.",
+                "title": "Age limit"
+            },
+            "Weight": {
+                "response": "Flying with heavy passengers requires a stronger wind than usual. We will try to book you the optimal time according to the wind forecast and your weight. The maximum weight is 100 KG (220 lbs). ",
+                "title": "Weight limit"
+            },
+            "Danger & Risk": {
+                "response": "Paragliding is an extreme sport and as such, it has some level of risk. That being said, the risk can be reduced to near zero by flying in good flying conditions, using proper equipment and most importantly flying with a qualified and experienced instructor. After performing many thousands of flights we can safely say that flying with us is less dangerous than driving the car on Israeli roads.",
+                "title": "Is Paragliding dangerous?"
+            }
+        }
+    }
+}
