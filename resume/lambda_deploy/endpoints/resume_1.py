@@ -1,4 +1,4 @@
-# from helper_functions_resume.handle_start import  
+# from helper_functions_resume.extract_text_from_pdf import extract_text_from_pdf 
 
 import boto3
 import logging
@@ -15,9 +15,7 @@ with open('config.json') as config_file:
 
 # AWS Configuration
 region_name = config["aws"]["region_name"]
-# table_name = config["aws"]["table_name"]
 bucket_name = config["aws"]["bucket_name"]
-# license_image_file_name = config["aws"]["license_image_file_name"]
 
 # # DynamoDB setup
 # dynamodb = boto3.resource("dynamodb", region_name=region_name)

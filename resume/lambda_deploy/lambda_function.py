@@ -36,5 +36,5 @@ def lambda_handler(event, context):
 # Get-ChildItem -Path . | Where-Object { $_.Name -notlike 'function.zip' } | Compress-Archive -DestinationPath function.zip -Force
 
 # deploy this zip to aws lambda with command: 
-# aws lambda update-function-code --function-name botox_function --zip-file fileb://function.zip    
+# aws lambda update-function-code --function-name resume_function --zip-file fileb://function.zip    
     
