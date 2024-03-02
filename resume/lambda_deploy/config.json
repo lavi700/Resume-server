@@ -13,9 +13,6 @@
         "delete_url": "/deleteMessage",
         "sendPhoto_url": "/sendPhoto"
     },
-    "openai": {
-        "api_key": ""
-    },
     "settings": {
         "months_to_keep_gpt_data": 6,
         "days_to_keep_users_data": 3,
