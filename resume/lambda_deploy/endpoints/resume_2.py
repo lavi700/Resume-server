@@ -7,6 +7,7 @@ import json
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 import dateutil.tz
+from io import BytesIO
 
 israel_tz = dateutil.tz.gettz("Asia/Jerusalem")
 
@@ -35,17 +36,27 @@ logger.setLevel(logging.ERROR)  # You can set this to DEBUG, INFO, WARNING, ERRO
 
 def handle_resume_event_2(event): 
     # return {'statusCode': 500, 'body': json.dumps('An internal error occurred')} # to test error case
-    try:
-        # code to read all pdfs and score them
+    # try:
+    s3_client = boto3.client('s3', region_name=region_name)
+    body = json.loads(event['body'])
+    fileUniqueNames = body.get('fileUniqueNames', [])
+    texts = []
+    for fileUniqueName in fileUniqueNames:
+        # Fetch the file object from S3
+        file_object = s3_client.get_object(Bucket=bucket_name, Key=fileUniqueName) 
+        file_content = file_object['Body'].read()
 
-        # return presined urls of the filtered resumes
-        return {
-            'statusCode': 200,
-            'body': json.dumps("kkk")
-        }
+        file_stream = BytesIO(file_content)
+        extracted_text = extract_text_from_pdf(file_stream)
+        texts.append(extracted_text)
+
+    return {
+        'statusCode': 200,
+        'body': json.dumps(texts)
+    }
         
-    except Exception as e:
-        logger.error('An error occurred: %s', e, exc_info=True)
-        return {'statusCode': 500, 'body': json.dumps('An internal error occurred')}
+    # except Exception as e:
+    #     logger.error('An error occurred: %s', e, exc_info=True)
+    #     return {'statusCode': 500, 'body': json.dumps('An internal error occurred')}
 
 

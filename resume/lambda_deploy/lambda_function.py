@@ -1,6 +1,6 @@
 from endpoints.cloudwatch import handle_cloudwatch_event
-from endpoints.resume_1 import handle_resume_event_1 # the step of presinged urls
-from endpoints.resume_2 import handle_resume_event_2 # the step of the output
+from endpoints.resume_1 import handle_resume_event_1 
+from endpoints.resume_2 import handle_resume_event_2 
 
 import json
 import traceback
@@ -10,20 +10,20 @@ def lambda_handler(event, context):
     body = json.loads(event['body'])
     print(body)
 
-    try:
-        if "source" in event and event["source"] == "aws.events":
-            return handle_cloudwatch_event(event)
-        elif body.get('endpoint') == 'resume_1': 
-            return handle_resume_event_1(event)  
-        elif body.get('endpoint') == 'resume_2':  
-            return handle_resume_event_2(event)     
-        else:
-            return {'statusCode': 400, 'body': json.dumps('Invalid action')}
+    # try:
+    if "source" in event and event["source"] == "aws.events":
+        return handle_cloudwatch_event(event)
+    elif body.get('endpoint') == 'resume_1': 
+        return handle_resume_event_1(event)  
+    elif body.get('endpoint') == 'resume_2':  
+        return handle_resume_event_2(event)     
+    else:
+        return {'statusCode': 400, 'body': json.dumps('Invalid action')}
 
-    except Exception as e:
-        print(f"An error occurred: {e}")
-        traceback.print_exc()
-        return {"statusCode": 500, "body": json.dumps("Error")}
+    # except Exception as e:
+    #     print(f"An error occurred: {e}")
+    #     traceback.print_exc()
+    #     return {"statusCode": 500, "body": json.dumps("Error")}
     
 #  creating a deployment package with dependencies:
 # pip install timeout_decorator -t .
