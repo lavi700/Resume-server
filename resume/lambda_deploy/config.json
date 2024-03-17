@@ -2,7 +2,7 @@
     "aws": {
         "region_name": "eu-west-1",
         "table_name": "botox_3_table",
-        "bucket_name": "botoxbucket"
+        "bucket_name": "cookresumebucket"
     },
     "settings": {
         "months_to_keep_gpt_data": 6,

@@ -6,6 +6,7 @@ import json
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 import dateutil.tz
+import uuid
 
 israel_tz = dateutil.tz.gettz("Asia/Jerusalem")
 
@@ -38,15 +39,22 @@ def handle_resume_event_1(event):
         s3_client = boto3.client('s3', region_name=region_name)
         body = json.loads(event['body'])
         file_names = body.get('fileNames', [])
-        presigned_urls = {}
+        presigned_urls = []
         for file_name in file_names:
+            unique_id = uuid.uuid4()
+            unique_file_name = f"{unique_id}_{file_name}"
             presigned_url = s3_client.generate_presigned_url('put_object',
                                                                 Params={'Bucket': bucket_name,
-                                                                        'Key': file_name,
+                                                                        'Key': unique_file_name,
                                                                         'ContentType': 'application/pdf'
                                                                         },
                                                                 ExpiresIn=3600)  # URL expires in 1 hour
-            presigned_urls[file_name] = presigned_url
+            presigned_urls.append(
+                {
+                    "unique_file_name": unique_file_name,
+                    "presigned_url": presigned_url
+                }
+            )
             
         return {
             'statusCode': 200,
