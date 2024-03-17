@@ -9,6 +9,7 @@ def lambda_handler(event, context):
     print(event)
     body = json.loads(event['body'])
     print(body)
+    print('source: resume')
 
     try:
         if "source" in event and event["source"] == "aws.events":

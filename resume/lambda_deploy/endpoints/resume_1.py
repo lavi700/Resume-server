@@ -43,7 +43,7 @@ def handle_resume_event_1(event):
             presigned_url = s3_client.generate_presigned_url('put_object',
                                                                 Params={'Bucket': bucket_name,
                                                                         'Key': file_name,
-                                                                        # 'ContentType': 'application/pdf'
+                                                                        'ContentType': 'application/pdf'
                                                                         },
                                                                 ExpiresIn=3600)  # URL expires in 1 hour
             presigned_urls[file_name] = presigned_url
