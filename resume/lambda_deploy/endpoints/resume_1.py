@@ -58,9 +58,6 @@ def handle_resume_event_1(event):
             
         return {
             'statusCode': 200,
-            'headers': {
-                'Access-Control-Allow-Origin': '*',  # Adjust CORS as needed
-            },
             'body': json.dumps(presigned_urls)
         }
     

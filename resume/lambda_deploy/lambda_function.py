@@ -13,9 +13,9 @@ def lambda_handler(event, context):
     try:
         if "source" in event and event["source"] == "aws.events":
             return handle_cloudwatch_event(event)
-        elif body.get('fileNames'): 
+        elif body.get('endpoint') == 'resume_1': 
             return handle_resume_event_1(event)  
-        elif body.get('zibi'): 
+        elif body.get('endpoint') == 'resume_2':  
             return handle_resume_event_2(event)     
         else:
             return {'statusCode': 400, 'body': json.dumps('Invalid action')}

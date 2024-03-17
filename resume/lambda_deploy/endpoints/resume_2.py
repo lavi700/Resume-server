@@ -39,7 +39,10 @@ def handle_resume_event_2(event):
         # code to read all pdfs and score them
 
         # return presined urls of the filtered resumes
-        pass
+        return {
+            'statusCode': 200,
+            'body': json.dumps("kkk")
+        }
         
     except Exception as e:
         logger.error('An error occurred: %s', e, exc_info=True)
