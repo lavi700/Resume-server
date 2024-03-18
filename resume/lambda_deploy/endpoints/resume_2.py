@@ -8,6 +8,7 @@ from datetime import datetime
 from dateutil.relativedelta import relativedelta
 import dateutil.tz
 from io import BytesIO
+import time
 
 israel_tz = dateutil.tz.gettz("Asia/Jerusalem")
 
@@ -40,19 +41,35 @@ def handle_resume_event_2(event):
     s3_client = boto3.client('s3', region_name=region_name)
     body = json.loads(event['body'])
     fileUniqueNames = body.get('fileUniqueNames', [])
-    texts = []
+    resume_reports = []
     for fileUniqueName in fileUniqueNames:
         # Fetch the file object from S3
         file_object = s3_client.get_object(Bucket=bucket_name, Key=fileUniqueName) 
         file_content = file_object['Body'].read()
 
         file_stream = BytesIO(file_content)
-        extracted_text = extract_text_from_pdf(file_stream)
-        texts.append(extracted_text)
+        resume_text = extract_text_from_pdf(file_stream)
+        print(333333333333)
+
+        for j in range(3):
+            try:
+                gpt_output = chat_with_gpt(input=resume_text)
+                print(444444444444444)
+                print(gpt_output)
+                break
+            except Exception as e:
+                print(e)
+                time.sleep(1)
+
+        dict_report = json.loads(gpt_output)   
+
+        resume_reports.append(dict_report)
+        print(5555555555)
+        print(resume_reports)   
 
     return {
         'statusCode': 200,
-        'body': json.dumps(texts)
+        'body': json.dumps(resume_reports)
     }
         
     # except Exception as e:

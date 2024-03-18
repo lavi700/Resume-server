@@ -3,16 +3,13 @@ import PyPDF2
 def extract_text_from_pdf(pdf_file_object):
     words_list = []
     pdfReader = PyPDF2.PdfReader(pdf_file_object)
-    print(type(pdfReader))
 
     for page in pdfReader.pages:
-        print(type(page))
+        print(1111111111)
         page_text = page.extract_text()
-        print(22222222222222)
-        print("page_text: ", page_text)
+        print(222222222)
         if page_text:  # Check if page_text is not None
             for line in page_text.split('\n'):
-                print("line: ", line)
                 words_list.append(line)
                    
     return " ".join(words_list)

@@ -10,9 +10,9 @@ with open('config.json') as config_file:
 # OpenAI Configuration
 openai.api_key = os.environ['openai']
 
-gpt_instructions = ""
+gpt_instructions = config["GPT_instructions"]
 
-@timeout(5)
+@timeout(10)
 def chat_with_gpt(input=''):
     messages = [
         {"role": "system", "content": gpt_instructions},
