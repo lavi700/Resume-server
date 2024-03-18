@@ -43,13 +43,22 @@ def handle_resume_event_2(event):
     fileUniqueNames = body.get('fileUniqueNames', [])
     resume_reports = []
     for fileUniqueName in fileUniqueNames:
-        # Fetch the file object from S3
-        file_object = s3_client.get_object(Bucket=bucket_name, Key=fileUniqueName) 
+        # Fetch the file object from S3, using try except in case it didnt finish uploading from client
+        for j in range(3):
+            try:
+                file_object = s3_client.get_object(Bucket=bucket_name, Key=fileUniqueName)
+                break
+            except Exception as e:
+                print(e)
+                if j == 2:
+                    return {'statusCode': 500, 'body': json.dumps('An internal error occurred')}
+                time.sleep(1) 
+         
         file_content = file_object['Body'].read()
-
         file_stream = BytesIO(file_content)
         resume_text = extract_text_from_pdf(file_stream)
         print(333333333333)
+        print(resume_text)
 
         for j in range(3):
             try:
@@ -59,6 +68,8 @@ def handle_resume_event_2(event):
                 break
             except Exception as e:
                 print(e)
+                if j == 2:
+                    return {'statusCode': 500, 'body': json.dumps('An internal error occurred')}
                 time.sleep(1)
 
         dict_report = json.loads(gpt_output)   
