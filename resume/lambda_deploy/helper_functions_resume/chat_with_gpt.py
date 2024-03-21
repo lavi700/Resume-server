@@ -14,9 +14,13 @@ gpt_instructions = config["GPT_instructions"]
 
 @timeout(10)
 def chat_with_gpt(input=''):
+    # messages = [
+    #     {"role": "system", "content": gpt_instructions},
+    #     {"role": "user", "content": input},
+    # ]
     messages = [
-        {"role": "system", "content": gpt_instructions},
-        {"role": "user", "content": input},
+        {"role": "system", "content": "answer shortly"},
+        {"role": "user", "content": "what is the color of the sky?"},
     ]
     response = openai.ChatCompletion.create(
         model='gpt-3.5-turbo',
