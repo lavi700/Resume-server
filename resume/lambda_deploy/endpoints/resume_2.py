@@ -1,5 +1,6 @@
 from helper_functions_resume.extract_text_from_pdf import extract_text_from_pdf
 from helper_functions_resume.chat_with_gpt import chat_with_gpt 
+from helper_functions_resume.replace_placeholders import replace_placeholders 
 
 import boto3
 import logging
@@ -9,6 +10,7 @@ from dateutil.relativedelta import relativedelta
 import dateutil.tz
 from io import BytesIO
 import time
+from datetime import datetime
 
 israel_tz = dateutil.tz.gettz("Asia/Jerusalem")
 
@@ -41,6 +43,7 @@ def handle_resume_event_2(event):
     s3_client = boto3.client('s3', region_name=region_name)
     body = json.loads(event['body'])
     fileUniqueNames = body.get('fileUniqueNames', [])
+    role_title = body.get('role_title', [])
     resume_reports = []
     for fileUniqueName in fileUniqueNames:
         # Fetch the file object from S3, using try except in case it didnt finish uploading from client
@@ -58,9 +61,18 @@ def handle_resume_event_2(event):
         file_stream = BytesIO(file_content)
         resume_text = extract_text_from_pdf(file_stream)
 
+        gpt_instructions = config["GPT_instructions"]
+        current_datetime = datetime.now()
+        formatted_date = current_datetime.strftime('%Y-%m-%d')
+        replacements = {
+            "current_date": formatted_date,
+            "role_title": role_title
+        }
+        gpt_instructions = replace_placeholders(gpt_instructions, replacements)
+
         for j in range(3):
             # try:
-            gpt_output = chat_with_gpt(input=resume_text)
+            gpt_output = chat_with_gpt(input=resume_text, instructions=gpt_instructions)
             print("gpt_output: ", gpt_output)
             break
             # except Exception as e:

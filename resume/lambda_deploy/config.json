@@ -12,5 +12,5 @@
         "gpt_use_limit_per_user": 50,
         "gpt_global_monthly_limit": 400
     },
-    "GPT_instructions": "Given the input resume of a candidate to a role of a Data Scientist, output the following python dictionary format, containing the correct values as described here: \"{\\\"Experience\\\": HOW_MANY_YEARS_OF_RELEVANT_EXPERIENCE}\". Note the the current date is %%current_date%%."
+    "GPT_instructions": "Given the input resume of a candidate to a role of a %%role_title%%, output the following python dictionary format, containing the correct values as described here: \"{\\\"Experience\\\": HOW_MANY_YEARS_OF_RELEVANT_EXPERIENCE}\". Note the the current date is %%current_date%%."
 }
