@@ -36,9 +36,6 @@ logger = logging.getLogger()
 logger.setLevel(logging.ERROR)  # You can set this to DEBUG, INFO, WARNING, ERROR
 
 def handle_resume_event_2(event): 
-    gpt_output = chat_with_gpt()
-    print(444444444444444)
-    print(gpt_output)
     # return {'statusCode': 500, 'body': json.dumps('An internal error occurred')} # to test error case
     # try:
     s3_client = boto3.client('s3', region_name=region_name)
@@ -60,14 +57,11 @@ def handle_resume_event_2(event):
         file_content = file_object['Body'].read()
         file_stream = BytesIO(file_content)
         resume_text = extract_text_from_pdf(file_stream)
-        print(333333333333)
-        print(resume_text)
 
         for j in range(3):
             # try:
             gpt_output = chat_with_gpt(input=resume_text)
-            print(444444444444444)
-            print(gpt_output)
+            print("gpt_output: ", gpt_output)
             break
             # except Exception as e:
             #     print(e)
@@ -77,9 +71,7 @@ def handle_resume_event_2(event):
 
         dict_report = json.loads(gpt_output)   
 
-        resume_reports.append(dict_report)
-        print(5555555555)
-        print(resume_reports)   
+        resume_reports.append(dict_report)  
 
     return {
         'statusCode': 200,

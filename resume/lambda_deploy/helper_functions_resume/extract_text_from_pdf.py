@@ -5,9 +5,7 @@ def extract_text_from_pdf(pdf_file_object):
     pdfReader = PyPDF2.PdfReader(pdf_file_object)
 
     for page in pdfReader.pages:
-        print(1111111111)
         page_text = page.extract_text()
-        print(222222222)
         if page_text:  # Check if page_text is not None
             for line in page_text.split('\n'):
                 words_list.append(line)
