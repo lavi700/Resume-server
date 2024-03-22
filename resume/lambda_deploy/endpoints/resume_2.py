@@ -69,6 +69,7 @@ def handle_resume_event_2(event):
             "role_title": role_title
         }
         gpt_instructions = replace_placeholders(gpt_instructions, replacements)
+        print(gpt_instructions)
 
         for j in range(3):
             # try:
