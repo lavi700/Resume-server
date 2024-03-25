@@ -60,6 +60,9 @@ def handle_resume_event_2(event):
         file_content = file_object['Body'].read()
         file_stream = BytesIO(file_content)
         resume_text = extract_text_from_pdf(file_stream)
+        resume_text = 'David Lane. Experience: 14 years of experience as a lawyer. Education: BSc in Harvard Law.'
+        resume_text = "דוד כהן. השכלה: 2006-2010 תואר ראשון בהנדסה אזרחית. נסיון תעסוקתי: 2012-היום מהנדס אזרחי. שפות: עברית, אנגלית."
+        print(resume_text)
 
         gpt_instructions = config["GPT_instructions"]
         current_datetime = datetime.now()
@@ -73,7 +76,7 @@ def handle_resume_event_2(event):
 
         for j in range(3):
             # try:
-            gpt_output = chat_with_gpt(input=resume_text, instructions=gpt_instructions)
+            gpt_output = chat_with_gpt(input='Resume: '+resume_text, instructions=gpt_instructions)
             print("gpt_output: ", gpt_output)
             break
             # except Exception as e:
@@ -82,7 +85,8 @@ def handle_resume_event_2(event):
             #         return {'statusCode': 500, 'body': json.dumps('An internal error occurred')}
             #     time.sleep(1)
 
-        dict_report = json.loads(gpt_output)   
+        # dict_report = json.loads(gpt_output)   
+        dict_report = gpt_output
 
         resume_reports.append(dict_report)  
 

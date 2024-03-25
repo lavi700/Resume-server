@@ -12,6 +12,6 @@
         "gpt_use_limit_per_user": 50,
         "gpt_global_monthly_limit": 400
     },
-    "GPT_instructions": "Given the input resume of a candidate to a role of a %%role_title%%, output the number of years of experience the candidate has got in the specific given role. Note the the current date is %%current_date%%. Output format: \"{\\\"Experience\\\": HOW_MANY_YEARS_OF_EXPERIENCE}\".",
-    "GPT_instructions_2": "Given the input resume of a candidate to a role of a %%role_title%%, output the following python dictionary format, containing the correct values as described here: \"{\\\"Experience\\\": HOW_MANY_YEARS_OF_RELEVANT_EXPERIENCE}\". Note the the current date is %%current_date%%."
+    "GPT_instructions": "Given a Resume of a candidate, output the number of years of experience the candidate has got as a %%role_title%%. Note the the current date is %%current_date%%. Output just the number of years (e.g. '12').",
+    "GPT_instructions_2": "Given the Resume of a candidate to a role of a %%role_title%%, output the following python dictionary format, containing the correct values as described here: \"{\\\"Experience\\\": HOW_MANY_YEARS_OF_RELEVANT_EXPERIENCE}\". Note the the current date is %%current_date%%."
 }
