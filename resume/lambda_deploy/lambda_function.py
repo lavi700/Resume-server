@@ -8,7 +8,7 @@ import traceback
 def lambda_handler(event, context):
     print(event)
     body = json.loads(event['body'])
-    print(body)
+    print('body')
 
     # try:
     if "source" in event and event["source"] == "aws.events":
